@@ -32,10 +32,32 @@
         "command": "workbench.action.showAllEditors",
         "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)",
     },
+       {
+        "key": "space e",
+        "command": "runCommands",
+        "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus",
+        "args": {
+            "commands": [
+                "workbench.action.toggleSidebarVisibility",
+                "workbench.files.action.focusFilesExplorer",
+            ]
+        }
+    },
+    {
+        "key": "space e",
+        "command": "runCommands",
+        "when": "sideBarFocus && !inputFocus",
+        "args": {
+            "commands": [
+                "workbench.action.toggleSidebarVisibility",
+                "workbench.action.focusActiveEditorGroup",
+            ]
+        }
+    },
     {
         "key": "space e",
         "command": "workbench.action.toggleSidebarVisibility",
-        "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+        "when": "vim.mode == 'Normal' && editorTextFocus && foldersViewVisible",
     },
     {
         "key": "tab",
@@ -50,7 +72,7 @@
     {
         "key": "space space",
         "command": "workbench.action.quickOpen",
-        "when": "vim.mode == 'Normal' && (editorTextFocus && !inputFocus)"
+        "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
     },
     //! FOR EDITOR (VIM BINDINGS)
     {
