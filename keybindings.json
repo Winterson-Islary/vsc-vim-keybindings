@@ -62,12 +62,12 @@
     {
         "key": "tab",
         "command": "workbench.action.nextEditorInGroup",
-        "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
+        "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus || terminal.visible)"
     },
     {
         "key": "shift-tab",
         "command": "workbench.action.previousEditorInGroup",
-        "when": "(vim.mode == 'Normal' || vim.mode == 'Visual')&&(editorTextFocus || !inputFocus)"
+        "when": "(vim.mode == 'Normal' || vim.mode == 'Visual')&&(editorTextFocus || !inputFocus || terminal.visible)"
     },
     {
         "key": "space space",
