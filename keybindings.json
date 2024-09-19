@@ -30,12 +30,12 @@
     {
         "key": "space ,",
         "command": "workbench.action.showAllEditors",
-        "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)",
+        "when": "vim.mode == 'Normal' && vim.mode != 'SearchInProgressMode' && (editorTextFocus || !inputFocus)",
     },
-       {
+    {
         "key": "space e",
         "command": "runCommands",
-        "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus",
+        "when": "vim.mode == 'Normal' && vim.mode != 'SearchInProgressMode' && (editorTextFocus || !inputFocus) && !sideBarFocus",
         "args": {
             "commands": [
                 "workbench.action.toggleSidebarVisibility",
@@ -46,7 +46,7 @@
     {
         "key": "space e",
         "command": "runCommands",
-        "when": "sideBarFocus && !inputFocus",
+        "when": "sideBarFocus && !inputFocus && vim.mode != 'SearchInProgressMode'",
         "args": {
             "commands": [
                 "workbench.action.toggleSidebarVisibility",
@@ -57,7 +57,7 @@
     {
         "key": "space e",
         "command": "workbench.action.toggleSidebarVisibility",
-        "when": "vim.mode == 'Normal' && editorTextFocus && foldersViewVisible",
+        "when": "vim.mode == 'Normal' && vim.mode != 'SearchInProgressMode' && editorTextFocus && foldersViewVisible",
     },
     {
         "key": "tab",
@@ -72,7 +72,17 @@
     {
         "key": "space space",
         "command": "workbench.action.quickOpen",
-        "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+        "when": "vim.mode == 'Normal' && vim.mode != 'SearchInProgressMode'&& (editorTextFocus || !inputFocus)"
+    },
+    {
+        "key": "shift-f", // Shift-Focus to File Explorer (if open)
+        "command": "workbench.files.action.focusFilesExplorer",
+        "when": "vim.mode != 'Insert' && editorTextFocus && foldersViewVisible"
+    },
+    {
+        "key": "shift-f", // Shift-Focus to Editor
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "filesExplorerFocus && !editorTextFocus"
     },
     //! FOR EDITOR (VIM BINDINGS)
     {
@@ -88,42 +98,42 @@
     {
         "key": "space h",
         "command": "editor.action.showHover",
-        "when": "vim.mode != 'Insert' && editorTextFocus"
+        "when": "vim.mode != 'Insert' && vim.mode != 'SearchInProgressMode' && editorTextFocus"
     },
     {
         "key": "space c a",
         "command": "editor.action.codeAction",
-        "when": "vim.mode != 'Insert' && editorTextFocus"
+        "when": "vim.mode != 'Insert' && vim.mode != 'SearchInProgressMode'&& editorTextFocus"
     },
     {
         "key": "space c r",
         "command": "editor.action.rename",
-        "when": "vim.mode == 'Normal' && editorTextFocus"
+        "when": "vim.mode == 'Normal' && vim.mode != 'SearchInProgressMode'&& editorTextFocus"
     },
     {
-        "key": "space  c s",
+        "key": "space c s",
         "command": "workbench.action.gotoSymbol",
-        "when": "vim.mode == 'Normal' && editorTextFocus"
+        "when": "vim.mode == 'Normal' && vim.mode != 'SearchInProgressMode'&& editorTextFocus"
     },
     {
         "key": "space b d",
         "command": "workbench.action.closeActiveEditor",
-        "when": "vim.mode == 'Normal' && editorTextFocus"
+        "when": "vim.mode == 'Normal' && vim.mode != 'SearchInProgressMode'&& editorTextFocus"
     },
     {
         "key": "space g d",
         "command": "editor.action.revealDefinition",
-        "when": "vim.mode == 'Normal' && editorTextFocus"
+        "when": "vim.mode == 'Normal' && vim.mode != 'SearchInProgressMode'&& editorTextFocus"
     },
     {
         "key": "space g r",
         "command": "editor.action.goToReferences",
-        "when": "vim.mode == 'Normal' && editorTextFocus"
+        "when": "vim.mode == 'Normal' && vim.mode != 'SearchInProgressMode'&& editorTextFocus"
     },
     {
         "key": "space s g",
         "command": "workbench.action.findInFiles",
-        "when": "vim.mode == 'Normal' && (editorTextFocus && !inputFocus)"
+        "when": "vim.mode == 'Normal' && vim.mode != 'SearchInProgressMode'&& (editorTextFocus || !inputFocus)"
     },
     {
         "key": "ctrl-n",
