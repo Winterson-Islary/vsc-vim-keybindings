@@ -6,8 +6,8 @@
         "command": "workbench.action.createTerminalEditor"
     },
     {
-        "key": "ctrl+shift+oem_3",
-        "command": "workbench.action.terminal.new",
+        "key": "shift+oem_3",
+        "command": "workbench.action.terminal.newWithProfile",
         "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
     },
     //! NAVIGATION (VIM BINDINGS) 
