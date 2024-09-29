@@ -110,7 +110,7 @@
         "command": "editor.action.moveLinesUpAction",
         "when": "vim.mode != 'Insert' && editorTextFocus"
     },
-            {
+    {
         "key": "shift-k",
         "command": "vim.remap",
         "when": "vim.mode != 'Insert' && editorTextFocus",
