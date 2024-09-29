@@ -23,9 +23,35 @@
         "key": "ctrl-j",
         "command": "workbench.action.navigateDown",
     },
+     {
+        "key": "shift-j",
+        "command": "vim.remap",
+        "when": "vim.mode != 'Insert' && editorTextFocus",
+        "args": {
+            "before": [
+                "r"
+            ],
+            "after": [
+                "J"
+            ]
+        }
+    },
     {
         "key": "ctrl-k",
         "command": "workbench.action.navigateUp",
+    },
+        {
+        "key": "shift-k",
+        "command": "vim.remap",
+        "when": "vim.mode != 'Insert' && editorTextFocus",
+        "args": {
+            "before": [
+                "r"
+            ],
+            "after": [
+                "K"
+            ]
+        }
     },
     {
         "key": "space ,",
