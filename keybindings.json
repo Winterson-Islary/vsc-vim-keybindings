@@ -23,36 +23,12 @@
         "key": "ctrl-j",
         "command": "workbench.action.navigateDown",
     },
-     {
-        "key": "shift-j",
-        "command": "vim.remap",
-        "when": "vim.mode != 'Insert' && editorTextFocus",
-        "args": {
-            "before": [
-                "r"
-            ],
-            "after": [
-                "J"
-            ]
-        }
-    },
+
     {
         "key": "ctrl-k",
         "command": "workbench.action.navigateUp",
     },
-        {
-        "key": "shift-k",
-        "command": "vim.remap",
-        "when": "vim.mode != 'Insert' && editorTextFocus",
-        "args": {
-            "before": [
-                "r"
-            ],
-            "after": [
-                "K"
-            ]
-        }
-    },
+
     {
         "key": "space ,",
         "command": "workbench.action.showAllEditors",
@@ -116,10 +92,36 @@
         "command": "editor.action.moveLinesDownAction",
         "when": "vim.mode != 'Insert' && editorTextFocus"
     },
+         {
+        "key": "shift-j",
+        "command": "vim.remap",
+        "when": "vim.mode != 'Insert' && editorTextFocus",
+        "args": {
+            "before": [
+                "r"
+            ],
+            "after": [
+                "J"
+            ]
+        }
+    },
     {
         "key": "shift-k",
         "command": "editor.action.moveLinesUpAction",
         "when": "vim.mode != 'Insert' && editorTextFocus"
+    },
+            {
+        "key": "shift-k",
+        "command": "vim.remap",
+        "when": "vim.mode != 'Insert' && editorTextFocus",
+        "args": {
+            "before": [
+                "r"
+            ],
+            "after": [
+                "K"
+            ]
+        }
     },
     {
         "key": "space h",
