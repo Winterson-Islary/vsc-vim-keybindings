@@ -92,7 +92,7 @@
         "command": "editor.action.moveLinesDownAction",
         "when": "vim.mode != 'Insert' && editorTextFocus"
     },
-         {
+    {
         "key": "shift-j",
         "command": "vim.remap",
         "when": "vim.mode != 'Insert' && editorTextFocus",
