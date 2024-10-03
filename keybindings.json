@@ -84,7 +84,7 @@
     {
         "key": "shift-f", // Shift-Focus to Editor
         "command": "workbench.action.focusActiveEditorGroup",
-        "when": "filesExplorerFocus && !editorTextFocus"
+        "when": "filesExplorerFocus && !editorTextFocus && !inputFocus"
     },
     //! FOR EDITOR (VIM BINDINGS)
     {
