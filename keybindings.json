@@ -90,12 +90,12 @@
     {
         "key": "shift-j",
         "command": "editor.action.moveLinesDownAction",
-        "when": "vim.mode != 'Insert' && editorTextFocus"
+        "when": "vim.mode == 'Visual' && editorTextFocus"
     },
     {
         "key": "shift-j",
         "command": "vim.remap",
-        "when": "vim.mode != 'Insert' && editorTextFocus",
+        "when": "vim.mode == 'Normal' && editorTextFocus",
         "args": {
             "before": [
                 "r"
@@ -108,12 +108,12 @@
     {
         "key": "shift-k",
         "command": "editor.action.moveLinesUpAction",
-        "when": "vim.mode != 'Insert' && editorTextFocus"
+        "when": "vim.mode == 'Visual' && editorTextFocus"
     },
     {
         "key": "shift-k",
         "command": "vim.remap",
-        "when": "vim.mode != 'Insert' && editorTextFocus",
+        "when": "vim.mode == 'Normal' && editorTextFocus",
         "args": {
             "before": [
                 "r"
